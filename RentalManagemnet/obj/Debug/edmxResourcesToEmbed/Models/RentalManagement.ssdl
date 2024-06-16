@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentalManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Agents">
+    <Key>
+      <PropertyRef Name="agentID" />
+    </Key>
+    <Property Name="agentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="agentName" Type="varchar" MaxLength="255" />
+    <Property Name="agentPhone" Type="varchar" MaxLength="255" />
+    <Property Name="agentAddress" Type="varchar" MaxLength="255" />
+    <Property Name="agentFees" Type="money" />
+  </EntityType>
+  <EntityType Name="Applications">
+    <Key>
+      <PropertyRef Name="applicationID" />
+    </Key>
+    <Property Name="applicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenantID" Type="int" />
+    <Property Name="applicationDescription" Type="varchar" MaxLength="255" />
+    <Property Name="applicationStatus" Type="varchar" MaxLength="255" />
+    <Property Name="applicationTitle" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="invoiceID" />
+    </Key>
+    <Property Name="invoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="propertyID" Type="int" />
+    <Property Name="issueDate" Type="date" />
+    <Property Name="dueDate" Type="date" />
+    <Property Name="amountDue" Type="money" />
+    <Property Name="invoiceType" Type="varchar" MaxLength="255" />
+    <Property Name="invoiceStatus" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Maintenance">
+    <Key>
+      <PropertyRef Name="maintenanceID" />
+    </Key>
+    <Property Name="maintenanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maintenanceDescription" Type="varchar" MaxLength="255" />
+    <Property Name="maintenanceCost" Type="money" />
+    <Property Name="maintenanceDate" Type="date" />
+    <Property Name="propertyID" Type="int" />
+    <Property Name="maintenanceTitle" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Notices">
+    <Key>
+      <PropertyRef Name="noticeID" />
+    </Key>
+    <Property Name="noticeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noticeDescription" Type="varchar" MaxLength="255" />
+    <Property Name="noticeDate" Type="date" />
+    <Property Name="propertyID" Type="int" />
+    <Property Name="noticeTitle" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="propertyID" />
+    </Key>
+    <Property Name="propertyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="propertyAddress" Type="varchar" MaxLength="255" />
+    <Property Name="propertyType" Type="varchar" MaxLength="255" />
+    <Property Name="propertyRooms" Type="varchar" MaxLength="255" />
+    <Property Name="propertyGarages" Type="int" />
+    <Property Name="tenantID" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PropertyAudit">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActionType" Type="varchar" MaxLength="10" />
+    <Property Name="propertyID" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RentAudit">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActionType" Type="varchar" MaxLength="10" />
+    <Property Name="rentID" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Rents">
+    <Key>
+      <PropertyRef Name="rentID" />
+    </Key>
+    <Property Name="rentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="propertyID" Type="int" />
+    <Property Name="tenantID" Type="int" />
+    <Property Name="RentAmount" Type="money" />
+    <Property Name="startDate" Type="date" />
+    <Property Name="endDate" Type="date" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="tenantID" />
+    </Key>
+    <Property Name="tenantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="agentID" Type="int" />
+    <Property Name="tenantName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="tenantPhone" Type="varchar" MaxLength="255" />
+    <Property Name="CNIC" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="int" />
+  </EntityType>
+  <EntityType Name="TenantAudit">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActionType" Type="varchar" MaxLength="10" />
+    <Property Name="tenantID" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TransactionAudit">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActionType" Type="varchar" MaxLength="10" />
+    <Property Name="transactionID" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="transactionID" />
+    </Key>
+    <Property Name="transactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transactionDate" Type="date" />
+    <Property Name="transactionAmount" Type="money" />
+    <Property Name="invoiceID" Type="int" />
+  </EntityType>
+  <Association Name="FK__Applicati__tenan__5FB337D6">
+    <End Role="Tenant" Type="Self.Tenant" Multiplicity="0..1" />
+    <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="tenantID" />
+      </Principal>
+      <Dependent Role="Applications">
+        <PropertyRef Name="tenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Invoice__propert__5441852A">
+    <End Role="Property" Type="Self.Property" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="propertyID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="propertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Maintenan__prope__5812160E">
+    <End Role="Property" Type="Self.Property" Multiplicity="0..1" />
+    <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="propertyID" />
+      </Principal>
+      <Dependent Role="Maintenance">
+        <PropertyRef Name="propertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Notices__propert__6C190EBB">
+    <End Role="Property" Type="Self.Property" Multiplicity="0..1" />
+    <End Role="Notices" Type="Self.Notices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="propertyID" />
+      </Principal>
+      <Dependent Role="Notices">
+        <PropertyRef Name="propertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Property__tenant__70DDC3D8">
+    <End Role="Tenant" Type="Self.Tenant" Multiplicity="0..1" />
+    <End Role="Property" Type="Self.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="tenantID" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="tenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rents__propertyI__73BA3083">
+    <End Role="Property" Type="Self.Property" Multiplicity="0..1" />
+    <End Role="Rents" Type="Self.Rents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="propertyID" />
+      </Principal>
+      <Dependent Role="Rents">
+        <PropertyRef Name="propertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rents__tenantID__74AE54BC">
+    <End Role="Tenant" Type="Self.Tenant" Multiplicity="0..1" />
+    <End Role="Rents" Type="Self.Rents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="tenantID" />
+      </Principal>
+      <Dependent Role="Rents">
+        <PropertyRef Name="tenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tenant__agentID__4D94879B">
+    <End Role="Agents" Type="Self.Agents" Multiplicity="0..1" />
+    <End Role="Tenant" Type="Self.Tenant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Agents">
+        <PropertyRef Name="agentID" />
+      </Principal>
+      <Dependent Role="Tenant">
+        <PropertyRef Name="agentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacti__invoi__5AEE82B9">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
+    <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="invoiceID" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="invoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="createInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="propertyID" Type="int" Mode="In" />
+    <Parameter Name="dueDate" Type="date" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+    <Parameter Name="type" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="createNotice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="date" Type="date" Mode="In" />
+    <Parameter Name="propertyID" Type="int" Mode="In" />
+    <Parameter Name="title" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="createProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="address" Type="varchar" Mode="In" />
+    <Parameter Name="type" Type="varchar" Mode="In" />
+    <Parameter Name="rooms" Type="int" Mode="In" />
+    <Parameter Name="garages" Type="int" Mode="In" />
+  </Function>
+  <Function Name="createTenant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="agentID" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="cnic" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="deleteAgent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="agentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="deleteProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="propertyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="deleteRent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="deleteTenant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tenantID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="insertAgent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="address" Type="varchar" Mode="In" />
+    <Parameter Name="fees" Type="money" Mode="In" />
+  </Function>
+  <Function Name="insertApplication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tenantID" Type="int" Mode="In" />
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="title" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="insertMaintenance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="cost" Type="money" Mode="In" />
+    <Parameter Name="date" Type="date" Mode="In" />
+    <Parameter Name="propertyID" Type="int" Mode="In" />
+    <Parameter Name="title" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="insertTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="invoiceID" Type="int" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+  </Function>
+  <Function Name="rentProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tenantID" Type="int" Mode="In" />
+    <Parameter Name="propertyID" Type="int" Mode="In" />
+    <Parameter Name="rentAmount" Type="money" Mode="In" />
+    <Parameter Name="duration" Type="int" Mode="In" />
+    <Parameter Name="startDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="retrieveApplicationsOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="retrieveEmptyProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="retrieveExpense" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="retrieveIncome" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="retrievePaidInvoicesOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="retrievePropertiesOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="retrieveRentedProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="retrieveSoldProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="retrieveUnpaidInvoicesOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="RentalManagementModelStoreContainer">
+    <EntitySet Name="Agents" EntityType="Self.Agents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Maintenance" EntityType="Self.Maintenance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notices" EntityType="Self.Notices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Property" EntityType="Self.Property" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyAudit" EntityType="Self.PropertyAudit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RentAudit" EntityType="Self.RentAudit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rents" EntityType="Self.Rents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tenant" EntityType="Self.Tenant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TenantAudit" EntityType="Self.TenantAudit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionAudit" EntityType="Self.TransactionAudit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Applicati__tenan__5FB337D6" Association="Self.FK__Applicati__tenan__5FB337D6">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="Applications" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Invoice__propert__5441852A" Association="Self.FK__Invoice__propert__5441852A">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Maintenan__prope__5812160E" Association="Self.FK__Maintenan__prope__5812160E">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Maintenance" EntitySet="Maintenance" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Notices__propert__6C190EBB" Association="Self.FK__Notices__propert__6C190EBB">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Notices" EntitySet="Notices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Property__tenant__70DDC3D8" Association="Self.FK__Property__tenant__70DDC3D8">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rents__propertyI__73BA3083" Association="Self.FK__Rents__propertyI__73BA3083">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Rents" EntitySet="Rents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rents__tenantID__74AE54BC" Association="Self.FK__Rents__tenantID__74AE54BC">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="Rents" EntitySet="Rents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tenant__agentID__4D94879B" Association="Self.FK__Tenant__agentID__4D94879B">
+      <End Role="Agents" EntitySet="Agents" />
+      <End Role="Tenant" EntitySet="Tenant" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacti__invoi__5AEE82B9" Association="Self.FK__Transacti__invoi__5AEE82B9">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentalManagementModelStoreContainer" CdmEntityContainer="RentalManagementEntities">
+    <EntitySetMapping Name="Agents">
+      <EntityTypeMapping TypeName="RentalManagementModel.Agent">
+        <MappingFragment StoreEntitySet="Agents">
+          <ScalarProperty Name="agentID" ColumnName="agentID" />
+          <ScalarProperty Name="agentName" ColumnName="agentName" />
+          <ScalarProperty Name="agentPhone" ColumnName="agentPhone" />
+          <ScalarProperty Name="agentAddress" ColumnName="agentAddress" />
+          <ScalarProperty Name="agentFees" ColumnName="agentFees" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="RentalManagementModel.Application">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="applicationID" ColumnName="applicationID" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+          <ScalarProperty Name="applicationDescription" ColumnName="applicationDescription" />
+          <ScalarProperty Name="applicationStatus" ColumnName="applicationStatus" />
+          <ScalarProperty Name="applicationTitle" ColumnName="applicationTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="RentalManagementModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="issueDate" ColumnName="issueDate" />
+          <ScalarProperty Name="dueDate" ColumnName="dueDate" />
+          <ScalarProperty Name="amountDue" ColumnName="amountDue" />
+          <ScalarProperty Name="invoiceType" ColumnName="invoiceType" />
+          <ScalarProperty Name="invoiceStatus" ColumnName="invoiceStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maintenances">
+      <EntityTypeMapping TypeName="RentalManagementModel.Maintenance">
+        <MappingFragment StoreEntitySet="Maintenance">
+          <ScalarProperty Name="maintenanceID" ColumnName="maintenanceID" />
+          <ScalarProperty Name="maintenanceDescription" ColumnName="maintenanceDescription" />
+          <ScalarProperty Name="maintenanceCost" ColumnName="maintenanceCost" />
+          <ScalarProperty Name="maintenanceDate" ColumnName="maintenanceDate" />
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="maintenanceTitle" ColumnName="maintenanceTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notices">
+      <EntityTypeMapping TypeName="RentalManagementModel.Notice">
+        <MappingFragment StoreEntitySet="Notices">
+          <ScalarProperty Name="noticeID" ColumnName="noticeID" />
+          <ScalarProperty Name="noticeDescription" ColumnName="noticeDescription" />
+          <ScalarProperty Name="noticeDate" ColumnName="noticeDate" />
+          <ScalarProperty Name="noticeTitle" ColumnName="noticeTitle" />
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Properties">
+      <EntityTypeMapping TypeName="RentalManagementModel.Property">
+        <MappingFragment StoreEntitySet="Property">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="propertyAddress" ColumnName="propertyAddress" />
+          <ScalarProperty Name="propertyType" ColumnName="propertyType" />
+          <ScalarProperty Name="propertyRooms" ColumnName="propertyRooms" />
+          <ScalarProperty Name="propertyGarages" ColumnName="propertyGarages" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyAudits">
+      <EntityTypeMapping TypeName="RentalManagementModel.PropertyAudit">
+        <MappingFragment StoreEntitySet="PropertyAudit">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentAudits">
+      <EntityTypeMapping TypeName="RentalManagementModel.RentAudit">
+        <MappingFragment StoreEntitySet="RentAudit">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="rentID" ColumnName="rentID" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rents">
+      <EntityTypeMapping TypeName="RentalManagementModel.Rent">
+        <MappingFragment StoreEntitySet="Rents">
+          <ScalarProperty Name="rentID" ColumnName="rentID" />
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+          <ScalarProperty Name="RentAmount" ColumnName="RentAmount" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tenants">
+      <EntityTypeMapping TypeName="RentalManagementModel.Tenant">
+        <MappingFragment StoreEntitySet="Tenant">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+          <ScalarProperty Name="agentID" ColumnName="agentID" />
+          <ScalarProperty Name="tenantName" ColumnName="tenantName" />
+          <ScalarProperty Name="tenantPhone" ColumnName="tenantPhone" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TenantAudits">
+      <EntityTypeMapping TypeName="RentalManagementModel.TenantAudit">
+        <MappingFragment StoreEntitySet="TenantAudit">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionAudits">
+      <EntityTypeMapping TypeName="RentalManagementModel.TransactionAudit">
+        <MappingFragment StoreEntitySet="TransactionAudit">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="transactionID" ColumnName="transactionID" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="RentalManagementModel.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="transactionID" ColumnName="transactionID" />
+          <ScalarProperty Name="transactionDate" ColumnName="transactionDate" />
+          <ScalarProperty Name="transactionAmount" ColumnName="transactionAmount" />
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="createInvoice" FunctionName="RentalManagementModel.Store.createInvoice" />
+    <FunctionImportMapping FunctionImportName="createNotice" FunctionName="RentalManagementModel.Store.createNotice" />
+    <FunctionImportMapping FunctionImportName="createProperty" FunctionName="RentalManagementModel.Store.createProperty" />
+    <FunctionImportMapping FunctionImportName="createTenant" FunctionName="RentalManagementModel.Store.createTenant" />
+    <FunctionImportMapping FunctionImportName="insertAgent" FunctionName="RentalManagementModel.Store.insertAgent" />
+    <FunctionImportMapping FunctionImportName="insertApplication" FunctionName="RentalManagementModel.Store.insertApplication" />
+    <FunctionImportMapping FunctionImportName="insertMaintenance" FunctionName="RentalManagementModel.Store.insertMaintenance" />
+    <FunctionImportMapping FunctionImportName="insertTransaction" FunctionName="RentalManagementModel.Store.insertTransaction" />
+    <FunctionImportMapping FunctionImportName="rentProperty" FunctionName="RentalManagementModel.Store.rentProperty" />
+    <FunctionImportMapping FunctionImportName="deleteTenant" FunctionName="RentalManagementModel.Store.deleteTenant" />
+    <FunctionImportMapping FunctionImportName="retrieveExpense" FunctionName="RentalManagementModel.Store.retrieveExpense" />
+    <FunctionImportMapping FunctionImportName="retrieveIncome" FunctionName="RentalManagementModel.Store.retrieveIncome" />
+    <FunctionImportMapping FunctionImportName="retrieveEmptyProperties" FunctionName="RentalManagementModel.Store.retrieveEmptyProperties">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentalManagementModel.retrieveEmptyProperties_Result">
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="propertyAddress" ColumnName="propertyAddress" />
+          <ScalarProperty Name="propertyType" ColumnName="propertyType" />
+          <ScalarProperty Name="propertyRooms" ColumnName="propertyRooms" />
+          <ScalarProperty Name="propertyGarages" ColumnName="propertyGarages" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="retrieveRentedProperties" FunctionName="RentalManagementModel.Store.retrieveRentedProperties">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentalManagementModel.retrieveRentedProperties_Result">
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="propertyAddress" ColumnName="propertyAddress" />
+          <ScalarProperty Name="propertyType" ColumnName="propertyType" />
+          <ScalarProperty Name="propertyRooms" ColumnName="propertyRooms" />
+          <ScalarProperty Name="propertyGarages" ColumnName="propertyGarages" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="retrieveSoldProperties" FunctionName="RentalManagementModel.Store.retrieveSoldProperties">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentalManagementModel.retrieveSoldProperties_Result">
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="propertyAddress" ColumnName="propertyAddress" />
+          <ScalarProperty Name="propertyType" ColumnName="propertyType" />
+          <ScalarProperty Name="propertyRooms" ColumnName="propertyRooms" />
+          <ScalarProperty Name="propertyGarages" ColumnName="propertyGarages" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="retrieveApplicationsOfUser" FunctionName="RentalManagementModel.Store.retrieveApplicationsOfUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentalManagementModel.retrieveApplicationsOfUser_Result">
+          <ScalarProperty Name="applicationID" ColumnName="applicationID" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+          <ScalarProperty Name="applicationDescription" ColumnName="applicationDescription" />
+          <ScalarProperty Name="applicationStatus" ColumnName="applicationStatus" />
+          <ScalarProperty Name="applicationTitle" ColumnName="applicationTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="retrievePaidInvoicesOfUser" FunctionName="RentalManagementModel.Store.retrievePaidInvoicesOfUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentalManagementModel.retrievePaidInvoicesOfUser_Result">
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="issueDate" ColumnName="issueDate" />
+          <ScalarProperty Name="dueDate" ColumnName="dueDate" />
+          <ScalarProperty Name="amountDue" ColumnName="amountDue" />
+          <ScalarProperty Name="invoiceType" ColumnName="invoiceType" />
+          <ScalarProperty Name="invoiceStatus" ColumnName="invoiceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="retrievePropertiesOfUser" FunctionName="RentalManagementModel.Store.retrievePropertiesOfUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentalManagementModel.retrievePropertiesOfUser_Result">
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="propertyAddress" ColumnName="propertyAddress" />
+          <ScalarProperty Name="propertyType" ColumnName="propertyType" />
+          <ScalarProperty Name="propertyRooms" ColumnName="propertyRooms" />
+          <ScalarProperty Name="propertyGarages" ColumnName="propertyGarages" />
+          <ScalarProperty Name="tenantID" ColumnName="tenantID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="retrieveUnpaidInvoicesOfUser" FunctionName="RentalManagementModel.Store.retrieveUnpaidInvoicesOfUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentalManagementModel.retrieveUnpaidInvoicesOfUser_Result">
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+          <ScalarProperty Name="propertyID" ColumnName="propertyID" />
+          <ScalarProperty Name="issueDate" ColumnName="issueDate" />
+          <ScalarProperty Name="dueDate" ColumnName="dueDate" />
+          <ScalarProperty Name="amountDue" ColumnName="amountDue" />
+          <ScalarProperty Name="invoiceType" ColumnName="invoiceType" />
+          <ScalarProperty Name="invoiceStatus" ColumnName="invoiceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="deleteRent" FunctionName="RentalManagementModel.Store.deleteRent" />
+    <FunctionImportMapping FunctionImportName="deleteAgent" FunctionName="RentalManagementModel.Store.deleteAgent" />
+  </EntityContainerMapping>
+</Mapping>

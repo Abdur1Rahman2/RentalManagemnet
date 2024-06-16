@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Abdur Rahman\\source\\repos\\RentalManagemnet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2734C314-16E9-47B4-B377-65A993BD4E58}|RentalManagemnet\\RentalManagemnet.csproj|c:\\users\\abdur rahman\\source\\repos\\rentalmanagemnet\\rentalmanagemnet\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2734C314-16E9-47B4-B377-65A993BD4E58}|RentalManagemnet\\RentalManagemnet.csproj|solutionrelative:rentalmanagemnet\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2734C314-16E9-47B4-B377-65A993BD4E58}|RentalManagemnet\\RentalManagemnet.csproj|C:\\Users\\Abdur Rahman\\source\\repos\\RentalManagemnet\\rentalmanagemnet\\models\\rent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2734C314-16E9-47B4-B377-65A993BD4E58}|RentalManagemnet\\RentalManagemnet.csproj|solutionrelative:rentalmanagemnet\\models\\rent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2734C314-16E9-47B4-B377-65A993BD4E58}|RentalManagemnet\\RentalManagemnet.csproj|C:\\Users\\Abdur Rahman\\source\\repos\\RentalManagemnet\\rentalmanagemnet\\models\\rentalmanagement.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{2734C314-16E9-47B4-B377-65A993BD4E58}|RentalManagemnet\\RentalManagemnet.csproj|solutionrelative:rentalmanagemnet\\models\\rentalmanagement.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 333,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RentalManagement.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Abdur Rahman\\source\\repos\\RentalManagemnet\\RentalManagemnet\\Models\\RentalManagement.edmx",
+              "RelativeDocumentMoniker": "RentalManagemnet\\Models\\RentalManagement.edmx",
+              "ToolTip": "C:\\Users\\Abdur Rahman\\source\\repos\\RentalManagemnet\\RentalManagemnet\\Models\\RentalManagement.edmx [Diagram1]",
+              "RelativeToolTip": "RentalManagemnet\\Models\\RentalManagement.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-06-15T19:23:20.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Rent.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rahman\\source\\repos\\RentalManagemnet\\RentalManagemnet\\Models\\Rent.cs",
+              "RelativeDocumentMoniker": "RentalManagemnet\\Models\\Rent.cs",
+              "ToolTip": "C:\\Users\\Abdur Rahman\\source\\repos\\RentalManagemnet\\RentalManagemnet\\Models\\Rent.cs",
+              "RelativeToolTip": "RentalManagemnet\\Models\\Rent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T19:23:16.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rahman\\source\\repos\\RentalManagemnet\\RentalManagemnet\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "RentalManagemnet\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Abdur Rahman\\source\\repos\\RentalManagemnet\\RentalManagemnet\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "RentalManagemnet\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAADoBAAAAAAAAAAAYwEcBAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T08:06:14.863Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
